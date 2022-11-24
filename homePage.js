@@ -38,10 +38,10 @@ function random(e){
             input.placeholder="Invalid"
             input.style.border="2px solid red";
 
-           setTimeout(()=>{
+        setTimeout(()=>{
             input.placeholder="Enter Your Captcha";
             input.style.border="2px solid black";
-           },1000);
+        },1000);
     }
     }
 
@@ -62,6 +62,13 @@ let lowerCase=/[a-z]/;
 let number=/[0-9]/;
 let specail=/[! @ # $ % ^ & * ( ) _ ]/;
 
+let length=passwordValue.split('').length;     //Password Length
+    if(length<6){
+        inValid.style.display="block";
+    inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Password Length Should be minimum 6 digit"}`;
+
+    }
+// console.log(arr.length);
 let lowerCaseresult=lowerCase.test(passwordValue);
 let upperCaseresult=upperCase.test(passwordValue);
 let numberresult=number.test(passwordValue);
