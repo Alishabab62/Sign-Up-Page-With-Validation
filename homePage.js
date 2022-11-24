@@ -5,18 +5,21 @@ window.addEventListener('click' ,function(e){
     e.preventDefault();
 });
 
+    // ---------------------------------------------------------------------------------------
 
 
             // Captcha Generator
 
-const sub=document.getElementById('sub');
 const ref=document.getElementById('ref');
 const input=document.getElementById('input');
 const output=document.getElementById('output');
 
-
 function random(e){
+
     var cap=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0']
+    
+    //This is generating random index
+
     var a=cap[Math.floor(Math.random()*62)];
     var b=cap[Math.floor(Math.random()*62)];
     var c=cap[Math.floor(Math.random()*62)];
@@ -29,6 +32,8 @@ function random(e){
     }
     ref.addEventListener('click' ,random);
     window.addEventListener('load' ,random);
+
+    // ---------------------------------------------------------------------------------------
 
     //Captcha Checker
 
@@ -43,6 +48,9 @@ function random(e){
             input.style.border="2px solid black";
         },1000);
     }
+    else{
+        alert("ddbh")
+    }
     }
 
     signUp.addEventListener('click', ()=>{
@@ -51,9 +59,11 @@ function random(e){
     });
     
 
+    // ---------------------------------------------------------------------------------------
 
 
 //   Password Checker
+
 function password_checker(){
     const passwordValue=document.getElementById('password').value;
     const inValid=document.getElementById('pass-div');
@@ -77,22 +87,34 @@ let specailresult=specail.test(passwordValue);
 if(!(lowerCaseresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one LowerCase Character"}`;
-    
+    setTimeout(()=>{
+        inValid.innerHTML="";
+    },1000)
 }
 if(!(upperCaseresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one UpperCase Character"}`
+    setTimeout(()=>{
+        inValid.innerHTML="";
+    },1000)
 }
 
 if(!(numberresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one Number Character"}`
+    setTimeout(()=>{
+        inValid.innerHTML="";
+    },1000)
 }
 
 if(!(specailresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast Special Character"}`
+    setTimeout(()=>{
+        inValid.innerHTML="";
+    },1000)
 }
 }
 
+    // ---------------------------------------------------------------------------------------
 
