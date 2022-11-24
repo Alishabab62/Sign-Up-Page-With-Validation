@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <meta name ="viewport"content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./homePage.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body id="body">
+    <div class="header">
+        <div class="logo"><img src="./Images/KSPL LOGO.png" alt=""></div>
+        <div class="search-bar"><input type="search" ><i class="fa fa-search" aria-hidden="true"></i></div>
+        <div class="right-bar">
+            <div class="icon">
+                <!-- <i class="fa-solid fa-circle-half-stroke" id="icon"></i> -->
+            </div>
+            <div class="subscription">Subscription</div>
+            <div class="about">About Us</div>
+            <div class="contact">Contact Us</div>
+        </div>
+
+    </div>
+    <div class="cont">
+        <h3>Create Account</h3>
+        <form id="form">
+            <label>First Name</label>
+            <input type="text" id="f-name" placeholder="Enter First Name" >
+            <label>Last Name</label>
+            <input type="text" id="l-name" placeholder="Enter Last Name">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter Email">
+            <label>Phone number</label>
+            <input type="tel" id="phone" placeholder="Phone number">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter Password">
+            <p id="pass-div"></p>
+            <label>Date of Birth</label>
+            <input type="date" id="dob">
+            <div class="captcha"><input type="text" id="output"><i class="fa-sharp fa-solid fa-arrows-rotate" id="ref"></i></div>
+            <input type="text" id="input" placeholder="Enter Your Captcha">
+            <button id="sign-up">Sign Up</button>
+            <p>Already have an account? <a href="index.html">Log In</a></p>
+        </form>
+    </div>
+    <script src="./homePage.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+*,html{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* For header */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #05445E;
+    height: 15vh;
+    align-items: center;
+    box-shadow: 0px 10px 10px gray;
+}
+.logo{
+    height: 70%;
+    width: 6%;
+    margin-left: 15px;
+    
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.header .search-bar{
+    width: 35%;
+    background-color: cornsilk;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+    height: 40%;
+}
+.header .search-bar input{
+    width: 100%;
+    border-radius: 8px;
+    height: 100%;
+}
+.header .search-bar i{
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    color: #05445E;
+}
+
+.header .right-bar{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+            /* Main Contaner */
+
+.cont{
+    width: 40%;
+    height: 120vh;
+    margin: auto;
+    font-size: 1.5em;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* box-shadow: 10px 10px 10px gray; */
+    background-color: white;
+    margin: auto;
+    margin-top: 100px;
+    background-color: #D4F1F4;
+}
+.cont h3{
+    width: 48%;
+    margin: auto;
+    top: 60px;
+    font-size: 1.8em;
+    left: 30%;
+    position: absolute;
+}
+form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height:auto;
+    top: 140px;
+   margin: auto;
+}
+form label{
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+form input{
+    font-size: 1em;
+    padding-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid purple;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+/* #dob{
+    color: grey; 
+    padding: 8px 5px 8px 5px; 
+     font-size: 25px;
+}  */
+#output{
+    width: 25%;
+    padding-left: 15px;
+    font-weight: bold;
+}
+.captcha{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.captcha i{
+    font-size: 30px;
+    left: 140px;
+    position: absolute;
+}
+
+form button{
+    padding: 10px;
+    width: 50%;
+    font-size: 0.8em;
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color:#05445E;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 30px;
+    color: white;
+    border: none;
+}
+form p{
+    margin-top: 20px;
+}
+
+#pass-div{
+    color: crimson;
+    margin-top: 0px;
+    margin-top: 0px;
+    margin: auto;
+    display: none;
+}
+
