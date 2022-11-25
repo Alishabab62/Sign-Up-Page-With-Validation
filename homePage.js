@@ -1,11 +1,7 @@
-const form=document.getElementById('form');
 const signUp=document.getElementById('sign-up');
 
-window.addEventListener('click' ,function(e){
+signUp.addEventListener('click', (e)=>{
     e.preventDefault();
-});
-
-signUp.addEventListener('click', ()=>{
     captcha_checker();
     password_checker();
     confirmPassword();
@@ -48,14 +44,14 @@ function random(e){
 
     function captcha_checker(){
         if(input.value != output.value){
-            input.value=""
-            input.placeholder="Invalid"
-            input.style.border="2px solid red";
-
-        setTimeout(()=>{
+            input.value="";
+            input.placeholder="Invalid";
+            input.style.border="3px solid red";
+        input.addEventListener('focus',(e)=>{
+            input.style.border="1px solid black";
+            input.value="";
             input.placeholder="Enter Your Captcha";
-            input.style.border="2px solid black";
-        },1000);
+        });
     }
     }
 
@@ -65,7 +61,8 @@ function random(e){
 //   Password Checker
 
 function password_checker(){
-    const passwordValue=document.getElementById('password').value;
+    const password=document.getElementById('password');
+    let passwordValue=password.value;
     const inValid=document.getElementById('pass-div');
 let upperCase=/[A-Z]/;
 let lowerCase=/[a-z]/;
@@ -80,40 +77,59 @@ let specailresult=specail.test(passwordValue);
 
 // console.log(passwordValue)
 let length=passwordValue.split('').length;     //Password Length
-    if(length<6){
+if(length==0){
+    inValid.style.display="block";
+    inValid.innerHTML="Enter Password";
+    password.style.border="3px solid red";
+    password.addEventListener('focus',()=>{
+        inValid.style.display="none";
+        password.style.border="1px solid blue";
+    });
+}
+   else if(length<6){
         inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Password Length Should be minimum 6 digit"}`;
-    setTimeout(()=>{
-        inValid.innerHTML="";
-    },1000)
+    password.style.border="3px solid red";
+    password.addEventListener('focus',()=>{
+        inValid.style.display="none";
+        password.style.border="1px solid black";
+    });
 }
 else if(!(lowerCaseresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one LowerCase Character"}`;
-    setTimeout(()=>{
-        inValid.innerHTML="";
-    },1000)
+    password.style.border="3px solid red";
+    password.addEventListener('focus',()=>{
+        inValid.style.display="none";
+        password.style.border="1px solid black";
+    });
 }
 else if(!(upperCaseresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one UpperCase Character"}`
-    setTimeout(()=>{
-        inValid.innerHTML="";
-    },1000)
+    password.style.border="3px solid red";
+    password.addEventListener('focus',()=>{
+        inValid.style.display="none";
+        password.style.border="1px solid black";
+    });
 }
 else if(!(numberresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one Number Character"}`
-    setTimeout(()=>{
-        inValid.innerHTML="";
-    },1000)
+    password.style.border="3px solid red";
+    password.addEventListener('focus',()=>{
+        inValid.style.display="none";
+        password.style.border="1px solid black";
+    });
 }
 else if(!(specailresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast Special Character"}`
-    setTimeout(()=>{
-        inValid.innerHTML="";
-    },1000);
+    password.style.border="3px solid red";
+    password.addEventListener('focus',()=>{
+        inValid.style.display="none";
+        password.style.border="1px solid black";
+    });
 }
 
 }
@@ -124,17 +140,22 @@ else if(!(specailresult)){
     // Validation  Between enter and confirm password
 
     function confirmPassword(){
-    const passwordValue=document.getElementById('password').value;
-    const confirmpassword=document.getElementById('confirm-password').value;
+    const password=document.getElementById('password');
+    let passwordValue=password.value;
+    const confirmpassword=document.getElementById('confirm-password');
+    console.log(confirmpassword.value);
+    let confirmpasswordValue=confirmpassword.value;
     let passDiv=document.getElementById('same-pass');
-    if(passwordValue !=confirmpassword){
+    if(passwordValue != confirmpasswordValue){
     passDiv.style.display="block";
         passDiv.innerText="Invalid";
+        confirmpassword.style.border="3px solid red";
+        confirmpassword.addEventListener('focus',()=>{
+        passDiv.style.display="none";
+        confirmpassword.style.border="1px solid black";
+        })
         }
-        setTimeout(()=>{
-            passDiv.innerHTML="";
-        },1000);
-}
+    }
 
 
     // ---------------------------------------------------------------------------------------
@@ -142,72 +163,85 @@ else if(!(specailresult)){
 // Validation for firstName
 
 function firstNameValidation(){
-    const fName=document.getElementById('f-name').value;
+    const fName=document.getElementById('f-name');
+    const fnameValue=fName.value;
     const valid=document.getElementById('f-name-validation');
     let upperCase=/[A-Z]/;
-    let firstChar=fName.split('')[0];
-    if(fName==0){
+    let firstChar=fnameValue.split('')[0];
+    if(fnameValue==0){
         valid.style.display="block";
         valid.innerHTML="Enter your name";
-        setTimeout(()=>{
-            valid.innerHTML="";
-        },1000);
+        fName.style.border="3px solid red";
+        fName.addEventListener('focus',()=>{
+        valid.style.display="none";
+        valid.innerHTML="";
+        fName.style.border="3px solid black";
+        })
     }
     else{
         if(!(upperCase.test(firstChar))){
             valid.style.display="block";
                 valid.innerHTML="First Character Should be in Uppercase"
-            }
-            setTimeout(()=>{
+                fName.style.border="3px solid red";
+                fName.addEventListener('focus',()=>{
+                valid.style.display="none";
                 valid.innerHTML="";
-            },1000);
+                fName.style.border="3px solid black";
+                })
+    }
     }
 }
-
     // ---------------------------------------------------------------------------------------
 
 
 // Validation for lastName
 
 function lastNameValidation(){
-    const lName=document.getElementById('l-name').value;
+    const lName=document.getElementById('l-name');
+    const lNameValue=lName.value;
     const valid=document.getElementById('l-name-validation');
-    let firstChar=lName.split('')[0];
+    let firstChar=lNameValue.split('')[0];
     let upperCase=/[A-Z]/;
-    if(lName==0){
+    if(lNameValue==0){
         valid.style.display="block";
-        valid.innerHTML="Enter your name";
-        setTimeout(()=>{
-            valid.innerHTML="";
-        },1000);
+        valid.innerHTML="Enter your  surname";
+        lName.style.border="3px solid red";
+        lName.addEventListener('focus',()=>{
+        valid.style.display="none";
+        valid.innerHTML="";
+        })
     }
     else{
         if(!(upperCase.test(firstChar))){
             valid.style.display="block";
                 valid.innerHTML="First Character Should be in Uppercase"
-            }
-            setTimeout(()=>{
+                lName.style.border="3px solid red";
+                lName.addEventListener('focus',()=>{
+                valid.style.display="none";
                 valid.innerHTML="";
-            },1000);
+                lName.style.border="3px solid black";
+                })
     }
 }
-
+}
 
     // ---------------------------------------------------------------------------------------
 
     // validation for email address
 
     function emailValidation(){
-        const email=document.getElementById('email').value;
+        const email=document.getElementById('email');
+        const emailValue=email.value;
         const emailval=document.getElementById('emailval');
         let regex=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        console.log(regex.test(email));
-        if(!(regex.test(email))){
+        console.log(regex.test(emailValue));
+        if(!(regex.test(emailValue))){
             emailval.style.display="block";
-                emailval.innerHTML="Enter Valid Email Address";
-            }
-            setTimeout(()=>{
-                emailval.innerHTML="";
-            },1000);
+            email.style.border="3px solid red";
+            emailval.innerHTML="Enter Valid Email Address";
+                email.addEventListener('focus',()=>{
+                    emailval.style.display="none";
+            email.style.border="3px solid black";
+            })
         }
-    
+    }
