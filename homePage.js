@@ -219,6 +219,7 @@ function lastNameValidation(){
         lName.addEventListener('focus',()=>{
         valid.style.display="none";
         valid.innerHTML="";
+        lName.style.border="3px solid black";
         })
     }
     else{

@@ -7,7 +7,10 @@
     /* width: 100%; */
 }
 #body{
-
+    /* background-image: url(./Images/background.png); */
+    background-image: linear-gradient(to right bottom,white,#D1FEFF,white,#B7DBD8,white);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 /* For header */
 
@@ -211,7 +214,7 @@ form p{
 /* Footer */
 
 .footer{
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     background-color: #05445E;
     width: 100%;
@@ -231,9 +234,21 @@ form p{
 .footer .firstrow .logo{
     width: 80px;
     height: 80px;
-
 }
-
+.footer .firstrow a{
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+.footer .firstrow i{
+    padding: 5px;
+    font-size: 25px;
+}
+.footer .services li{
+    margin-top: 13px;
+}
 .footer .secondrow{
     display: flex;
     font-size: 30px;
