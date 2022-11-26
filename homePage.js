@@ -67,12 +67,13 @@ function password_checker(){
 let upperCase=/[A-Z]/;
 let lowerCase=/[a-z]/;
 let number=/[0-9]/;
+let space=/[\s]/;
 let specail=/[! @ # $ % ^ & * ( ) _ ]/;
 let lowerCaseresult=lowerCase.test(passwordValue);
 let upperCaseresult=upperCase.test(passwordValue);
 let numberresult=number.test(passwordValue);
 let specailresult=specail.test(passwordValue);
-
+let spaceCase=space.test(passwordValue);
 
 
 // console.log(passwordValue)
@@ -80,6 +81,15 @@ let length=passwordValue.split('').length;     //Password Length
 if(length==0){
     inValid.style.display="block";
     inValid.innerHTML="Enter Password";
+    password.style.border="3px solid red";
+    password.addEventListener('focus',()=>{
+        inValid.style.display="none";
+        password.style.border="1px solid blue";
+    });
+}
+else if(spaceCase){
+    inValid.style.display="block";
+    inValid.innerHTML="Do not use space";
     password.style.border="3px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
@@ -245,3 +255,26 @@ function lastNameValidation(){
             })
         }
     }
+
+
+    // ---------------------------------------------------------------------------------------
+    
+    //for search box
+
+    const searchBox=document.getElementById('search-box');
+    const searchBoxValue=searchBox.value;
+    const searchicon=document.getElementById('search-icon');
+
+    searchBox.addEventListener('input',()=>{
+        searchicon.style.display="none";
+    });
+    searchBox.addEventListener('blur',()=>{
+        if(searchBoxValue == " "){
+            console.log(searchBoxValue)
+            searchicon.style.display="block";
+        }
+    });
+    
+    // ---------------------------------------------------------------------------------------
+
+    
