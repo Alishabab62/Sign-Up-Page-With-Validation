@@ -1,0 +1,30 @@
+@media  screen and (max-width:500px){
+   .cont{
+    width: 100%;
+   } 
+ .header .right-bar{
+    display: none;
+   }
+   .enquiry,.services,.terms-condition,.about{
+      margin-top: 100px;
+   }
+}
+
+
+
+
+
+
+
+@media  screen and(max-width:1000px)  {
+   .cont{
+      width: 100%;
+      
+   }
+   body{
+      background-color: red;
+   }
+   .header{
+      display: none;
+   }
+}

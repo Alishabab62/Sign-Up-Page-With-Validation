@@ -65,6 +65,8 @@
     color: white;
     font-size: 25px;
     margin-right: 10px;
+    flex-wrap: wrap;
+    min-width: 200px;
 }
 
 .header .right-bar a{
@@ -82,12 +84,14 @@
     color: #D4F1F4; 
     font-size: 26px;
 }
-
+.subscription,.about,.contact{
+   max-width: 150px;
+}
             /* Main Contaner */
 
 .cont{
     width: 40%;
-    height:58em;
+    height:65em;
     margin: auto;
     font-size: 1.5em;
     border-radius: 10px;
@@ -122,16 +126,18 @@ form label{
     font-size: 1.4em;
     margin-top: 20px;
 }
-form input{
+form input,select{
     font-size: 1em;
-    padding-left: 10px;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid purple;
+    border: 2px solid grey;
     margin-top: 5px;
     margin-bottom: 5px;
-
 }
+select{
+    color:black;
+}
+
 #dob{
     color: grey;
 } 
@@ -230,6 +236,7 @@ form p{
     width: 90%;
     margin-top: 2%;
     color: white;
+    flex-wrap: wrap;
 }
 .footer .firstrow .logo{
     width: 80px;
@@ -265,4 +272,7 @@ form p{
     padding:8px;
     background-color: lightblue;
     border-radius: 5px;
+}
+.enquiry,.services,.terms-condition,.about{
+    min-width: 100px;
 }

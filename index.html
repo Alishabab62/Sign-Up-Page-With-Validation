@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./homePage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./responsoveHomePage.css">
 </head>
 <body id="body">
     <div class="header">
@@ -35,7 +36,14 @@
             <p id="l-name-validation" class="pass-checker"></p>
             <label>Date of Birth</label>
             <input type="date" id="dob">
-            <label>Phone number</label>
+            <label for="Gender">Gender</label>
+            <select name="gender" id="select-gender">
+                <option value="Male">Select</option>
+                <option value="Male">Male</option>
+                <option value="Male">Female</option>
+                <option value="Male">Other</option>
+            </select>
+            <label for="phoneno">Phone No.</label>
             <input type="tel" id="phone" placeholder="Phone number">
             <label>Email</label>
             <input type="email" id="email" placeholder="Enter Email">
