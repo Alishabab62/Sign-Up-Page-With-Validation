@@ -46,7 +46,7 @@ function random(e){
         if(input.value != output.value){
             input.value="";
             input.placeholder="Invalid";
-            input.style.border="3px solid red";
+            input.style.border="1px solid red";
         input.addEventListener('focus',(e)=>{
             input.style.border="1px solid black";
             input.value="";
@@ -81,7 +81,7 @@ let length=passwordValue.split('').length;     //Password Length
 if(length==0){
     inValid.style.display="block";
     inValid.innerHTML="Enter Password";
-    password.style.border="3px solid red";
+    password.style.border="1px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
         password.style.border="1px solid blue";
@@ -90,7 +90,7 @@ if(length==0){
 else if(spaceCase){
     inValid.style.display="block";
     inValid.innerHTML="Do not use space";
-    password.style.border="3px solid red";
+    password.style.border="1px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
         password.style.border="1px solid blue";
@@ -99,7 +99,7 @@ else if(spaceCase){
    else if(length<6){
         inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Password Length Should be minimum 6 digit"}`;
-    password.style.border="3px solid red";
+    password.style.border="1px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
         password.style.border="1px solid black";
@@ -108,7 +108,7 @@ else if(spaceCase){
 else if(!(lowerCaseresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one LowerCase Character"}`;
-    password.style.border="3px solid red";
+    password.style.border="1px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
         password.style.border="1px solid black";
@@ -117,7 +117,7 @@ else if(!(lowerCaseresult)){
 else if(!(upperCaseresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one UpperCase Character"}`
-    password.style.border="3px solid red";
+    password.style.border="1px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
         password.style.border="1px solid black";
@@ -126,7 +126,7 @@ else if(!(upperCaseresult)){
 else if(!(numberresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast one Number Character"}`
-    password.style.border="3px solid red";
+    password.style.border="1px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
         password.style.border="1px solid black";
@@ -135,7 +135,7 @@ else if(!(numberresult)){
 else if(!(specailresult)){
     inValid.style.display="block";
     inValid.innerHTML=`<i class="fa fa-warning" aria-hidden="true" id="pass-valid"></i> ${"Atleast Special Character"}`
-    password.style.border="3px solid red";
+    password.style.border="1px solid red";
     password.addEventListener('focus',()=>{
         inValid.style.display="none";
         password.style.border="1px solid black";
@@ -159,7 +159,7 @@ else if(!(specailresult)){
     if(passwordValue != confirmpasswordValue){
     passDiv.style.display="block";
         passDiv.innerText="Invalid";
-        confirmpassword.style.border="3px solid red";
+        confirmpassword.style.border="1px solid red";
         confirmpassword.addEventListener('focus',()=>{
         passDiv.style.display="none";
         confirmpassword.style.border="1px solid black";
@@ -181,18 +181,18 @@ function firstNameValidation(){
     if(fnameValue==0){
         valid.style.display="block";
         valid.innerHTML="Enter your name";
-        fName.style.border="3px solid red";
+        fName.style.border="1px solid red";
         fName.addEventListener('focus',()=>{
         valid.style.display="none";
         valid.innerHTML="";
-        fName.style.border="3px solid black";
+        fName.style.border="1px solid black";
         })
     }
     else{
         if(!(upperCase.test(firstChar))){
             valid.style.display="block";
                 valid.innerHTML="First Character Should be in Uppercase"
-                fName.style.border="3px solid red";
+                fName.style.border="1px solid red";
                 fName.addEventListener('focus',()=>{
                 valid.style.display="none";
                 valid.innerHTML="";
@@ -215,22 +215,22 @@ function lastNameValidation(){
     if(lNameValue==0){
         valid.style.display="block";
         valid.innerHTML="Enter your  surname";
-        lName.style.border="3px solid red";
+        lName.style.border="1px solid red";
         lName.addEventListener('focus',()=>{
         valid.style.display="none";
         valid.innerHTML="";
-        lName.style.border="3px solid black";
+        lName.style.border="1px solid black";
         })
     }
     else{
         if(!(upperCase.test(firstChar))){
             valid.style.display="block";
                 valid.innerHTML="First Character Should be in Uppercase"
-                lName.style.border="3px solid red";
+                lName.style.border="1px solid red";
                 lName.addEventListener('focus',()=>{
                 valid.style.display="none";
                 valid.innerHTML="";
-                lName.style.border="3px solid black";
+                lName.style.border="1px solid black";
                 })
     }
 }
@@ -248,11 +248,11 @@ function lastNameValidation(){
         console.log(regex.test(emailValue));
         if(!(regex.test(emailValue))){
             emailval.style.display="block";
-            email.style.border="3px solid red";
+            email.style.border="1px solid red";
             emailval.innerHTML="Enter Valid Email Address";
                 email.addEventListener('focus',()=>{
                     emailval.style.display="none";
-            email.style.border="3px solid black";
+            email.style.border="1px solid black";
             })
         }
     }
