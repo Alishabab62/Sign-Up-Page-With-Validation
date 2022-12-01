@@ -252,7 +252,7 @@ function lastNameValidation(){
             emailval.innerHTML="Enter Valid Email Address";
                 email.addEventListener('focus',()=>{
                     emailval.style.display="none";
-            email.style.border="1px solid black";
+            email.style.border="none";
             })
         }
     }

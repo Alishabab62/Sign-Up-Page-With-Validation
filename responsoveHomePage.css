@@ -8,6 +8,11 @@
    .enquiry,.services,.terms-condition,.about{
       margin-top: 100px;
    }
+  .header .search-bar{
+      margin-right: 50px;
+      width: 20em;
+      border: none;
+   }
 }
 
 
