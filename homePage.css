@@ -132,7 +132,7 @@ form input,select{
     font-size: 1.2em;
     padding: 10px;
     border-radius: 5px;
-    border: none;
+    border:none;
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: rgb(231, 231, 231);
@@ -141,7 +141,18 @@ form input,select{
 select{
     color:gray;
 }
-
+#ul{
+    position: absolute;
+      margin-left: 170px;
+      margin-top: 290px;
+      background-color: rgb(231, 231, 231);
+      border-radius: 5px;
+      color: gray;
+      display: none;
+}
+ul li{
+    list-style: none;
+}
 #dob{
     color: grey;
 } 
@@ -275,7 +286,7 @@ form p a{
 }
 .footer .secondrow i:hover{
     border: 1px solid #D4F1F4;
-    padding:8px;
+    padding:5px;
     background-color: lightblue;
     border-radius: 5px;
 }
