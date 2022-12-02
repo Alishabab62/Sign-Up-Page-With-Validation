@@ -9,10 +9,11 @@ signUp.addEventListener('click', (e)=>{
     lastNameValidation();
     emailValidation();
 });
-
+    const demno=document.getElementById('demo');
+    // console.log(demo.innerText);
+    const demo2=document.querySelector('#header');
+    console.log(demo2);
     // ---------------------------------------------------------------------------------------
-
-
             // Captcha Generator
 
 const ref=document.getElementById('ref');
@@ -67,40 +68,60 @@ function random(e){
     const number=document.getElementById('number');
     const special=document.getElementById('special');
     const length=document.getElementById('length');
-        const password=document.getElementById('password');
+    const password=document.getElementById('password');
+    const ul=document.getElementById('ul');
+        let numberFlag=false;
         let passwordValue=password.value;
         ul.style.display='block';
         if(passwordValue.match(/[0-9]/)){
-            number.style.color="green"   
-        }else{
-            number.style.color="red"
+            number.style.color="green";
+            numberFlag=true;   
         }
-
+        else{
+            number.style.color="red";
+        }
+        let lowerFlag=false
         if(passwordValue.match(/[a-z]/)){
-            lower.style.color="green"   
-        }else{
-            lower.style.color="red"
+            lower.style.color="green";
+            lowerFlag=true;   
         }
+        else{
+            lower.style.color="red";
+        }
+        let upperFlag=false
         if(passwordValue.match(/[A-Z]/)){
-            upper.style.color="green"   
-        }else{
-            upper.style.color="red"
+            upper.style.color="green";
+            upperFlag=true;   
         }
+        else{
+            upper.style.color="red";
+        }
+        let specialFlag=false
         if(passwordValue.match(/[! @ # $ % ^ & * ( ) _ - ]/)){
-            special.style.color="green"   
-        }else{
-            special.style.color="red"
+            special.style.color="green";
+            specialFlag=true;   
         }
-        if(passwordValue.split('').length<6){
+        else{
+            special.style.color="red";
+        }
+        let lengthFlag=false
+        if(passwordValue.split('').length<7){
+            console.log(passwordValue.split(''));
             length.style.color='red';
-        }else{
+        }
+        else{
+            lengthFlag=true;
             length.style.color='green'
+        }
+        if(numberFlag && lowerFlag && upperFlag && specialFlag &&lengthFlag){
+            ul.style.display='none';
+            // console.log("Hello");
         }
         password.addEventListener('blur',()=>{
             ul.style.display='none'
         })
     })
-
+    
 
 
 

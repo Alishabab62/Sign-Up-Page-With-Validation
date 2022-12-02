@@ -5,7 +5,7 @@
     font-size: 10px;
 }
 html {
-    height: 85%;
+    height: 83%;
     width: 100%;
 }
 body{
@@ -74,7 +74,7 @@ body{
 
 .header .right-bar a{
     text-decoration: none;
-    color: #ffaa56;
+    color: #faa56f;
     
 }
 #about{
@@ -105,6 +105,7 @@ body{
     margin-top: 50px;
     background-color: white;
     margin-bottom: 100px;
+    padding-bottom: 4em;
     opacity: 1;
 }
 .cont h3{
@@ -142,13 +143,11 @@ select{
     color:gray;
 }
 #ul{
-    position: absolute;
-      margin-left: 170px;
-      margin-top: 290px;
-      background-color: rgb(231, 231, 231);
-      border-radius: 5px;
-      color: gray;
-      display: none;
+    width: 45%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    color: gray;
+    display: none;
 }
 ul li{
     list-style: none;
