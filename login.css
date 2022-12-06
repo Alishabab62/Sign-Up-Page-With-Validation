@@ -6,33 +6,25 @@ body{
     margin: auto    ;
     width: 30%;
     height: 400px;
-    box-shadow: 10px 10px 10px 10px gray;
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
     border-radius: 10px;
     text-align: center;
     margin-top: 7%;
-    ;
-}
-form{
-    flex-direction: column;
-    display: flex;
-}
-h1{
-    font-family: sans-serif;
 }
 .label{
     font-size: 25px;
-    font-family: sans-serif;
     padding: 10px;
     margin: 10px;
 }
 .username{
     width:70%;
     height: 30px;
-    outline: none;
-    font-family: sans-serif;
-    border-radius: 8px;
+    border-radius: 3px;
     padding-left: 10px;
+    border: none;
+    box-shadow: gray 0px 0px 1px,gray 0px 0px 1px,  gray 0px 0px 1px,  gray 0px 0px 1px, gray 0px 0px 1px;
+    
 }
 a{
     text-decoration: none;
@@ -41,9 +33,9 @@ a{
     width: 20%;
     height: 10%;
     font-size: 100%;
-    font-family: sans-serif;
-    background-color: skyblue;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #073213;
+    color: white;
     border: none;
-    border-radius: 5px;
-    box-shadow: gray 8px 8px 8px,gray 8px 8px 8px,  gray 8px 8px 8px,  gray 8px 8px 8px, gray 8px 8px 8px ;
+    border-radius: 3px;
 }
