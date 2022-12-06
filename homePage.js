@@ -263,3 +263,4 @@ const body=document.getElementById('container');
 let col=localStorage.getItem("backgroundColor");
 console.log(col);
 body.style.backgroundColor=`${col}`
+localStorage.clear();
