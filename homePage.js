@@ -15,10 +15,9 @@ signUp.addEventListener('click', (e)=>{
     console.log(demo2);
     // ---------------------------------------------------------------------------------------
             // Captcha Generator
-
-const ref=document.getElementById('ref');
-const input=document.getElementById('input');
-const output=document.getElementById('output');
+            const ref=document.getElementById('ref');
+            const input=document.getElementById('input');
+            const output=document.getElementById('output');
 
 function random(e){
 
@@ -35,35 +34,35 @@ function random(e){
     let captcha=a+b+c+d+e+f;
     output.value=captcha;
     input.value="";
-    }
-    ref.addEventListener('click' ,random);
+}
+ref.addEventListener('click' ,random);
     window.addEventListener('load' ,random);
 
     // ---------------------------------------------------------------------------------------
-
+    
     //Captcha Checker
-
+    
     function captcha_checker(){
         if(input.value != output.value){
             input.value="";
             input.placeholder="Invalid";
             input.style.border="1px solid red";
-        input.addEventListener('focus',(e)=>{
-            input.style.border="1px solid black";
-            input.value="";
-            input.placeholder="Enter Your Captcha";
-        });
+            input.addEventListener('focus',(e)=>{
+                input.style.border="1px solid black";
+                input.value="";
+                input.placeholder="Enter Your Captcha";
+            });
+        }
     }
-    }
-
+    
     // ---------------------------------------------------------------------------------------
-
-
-//   Password Checker
-
+    
+    
+    //   Password Checker
+    
     
     password.addEventListener('input',()=>{
-    const upper=document.getElementById('uppercase');
+        const upper=document.getElementById('uppercase');
     const lower=document.getElementById('lowercase');
     const number=document.getElementById('number');
     const special=document.getElementById('special');
@@ -224,6 +223,7 @@ function lastNameValidation(){
     function emailValidation(){
         const email=document.getElementById('email');
         const emailValue=email.value;
+        localStorage.setItem("backgroundColor",`${emailValue}`);
         const emailval=document.getElementById('emailval');
         let regex=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
         console.log(regex.test(emailValue));
@@ -259,4 +259,7 @@ function lastNameValidation(){
     
     // ---------------------------------------------------------------------------------------
 
-    
+const body=document.getElementById('container');
+let col=localStorage.getItem("backgroundColor");
+console.log(col);
+body.style.backgroundColor=`${col}`

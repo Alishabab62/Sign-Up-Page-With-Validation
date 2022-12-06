@@ -21,7 +21,7 @@ header{
 }
 #bar:hover{
     cursor: pointer;
-    font-size: 3.9em;
+    font-size: 3.7em;
 }
 header h3{
     color: #faa56f;
@@ -54,7 +54,7 @@ header h3{
 .module:hover{
     background-color: #faa56f;
     color: #073213;
-    font-weight: bold;
+    /* font-weight: bold; */
     border: 2px solid #073213;
     cursor: pointer;
 }
