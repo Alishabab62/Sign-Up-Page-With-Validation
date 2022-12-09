@@ -51,14 +51,28 @@ header h3{
     padding: 8px 10px 8px 10px;
     font-size: 1.2em;
 }
+#id1{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    background-color: #073213;
+    color: #faa56f;
+    font-size: 1em; 
+    padding: 8px 15px 8px 15px;
+
+}
 .module:hover{
     background-color: #faa56f;
     color: #073213;
-    /* font-weight: bold; */
     border: 2px solid #073213;
     cursor: pointer;
 }
-
+#id1:hover{
+    background-color: #faa56f;
+    color: #073213;
+    border: 2px solid #073213;
+    cursor: pointer;
+    border: none;
+}
 
 #unsubscription-module-container h3{
     text-align: center;
