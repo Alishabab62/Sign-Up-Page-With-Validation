@@ -13,5 +13,6 @@ function passwordLengthFun(){
 function passwordCase(){
     const upperCase=document.getElementById('uppercase');
     localStorage.setItem("upperCase",`${upperCase.checked}`);
-    console.log(localStorage.getItem("upperCase"));
+    const lowerCase=document.getElementById('lowercase');
+    localStorage.setItem("lowercase",`${lowerCase.checked}`)
 }

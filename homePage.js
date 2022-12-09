@@ -111,11 +111,52 @@ window.addEventListener('load' ,random);
     //         ul.style.display='none';
     //     }
     //     password.addEventListener('blur',()=>{
-    //         ul.style.display='none'
+    //         ul.style.display='none';
     //     })
     // })
-    
-    
+    const password=document.getElementById('password');
+    const ul=document.getElementById('ul');
+    password.addEventListener('input',()=>{
+        let passwordValue=password.value;
+        let up=localStorage.getItem("upperCase");
+        // console.log(up);
+        if(up=="true"){
+            console.log("Inside Upper");
+            let li=document.createElement('li');
+            li.innerText="Atleast one uppercase";
+            li.id="uppercase";
+            ul.appendChild(li);
+            ul.style.display='block';
+            
+            const upper=document.getElementById('uppercase');
+            if(passwordValue.match(/[A-Z]/)){
+                upper.style.color="green";
+            }
+            else{
+                upper.style.color="red";
+            }
+            // localStorage.setItem("upperCase","false");
+    }
+        let low=localStorage.getItem("lowerCase");
+        console.log(low);
+        // if(low=="true"){
+        //     console.log("Inside Lower");
+        //     let li=document.createElement('li');
+        //     li.innerText="Atleast one lowercase";
+        //     li.id="lowercase";
+        //     ul.appendChild(li);
+        //     ul.style.display='block';
+        //     localStorage.setItem("lowerCase","false");
+        // }
+        // const lower=document.getElementById("lowercase");
+        // if(passwordValue.match([/a-z/])){
+        //     lower.style.color="red";
+        // }
+        // else{
+        //     lower.style.color="green";
+        // }
+    })
+   
 
 
     // ---------------------------------------------------------------------------------------
