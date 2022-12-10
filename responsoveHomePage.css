@@ -26,8 +26,9 @@
    .header .logo{
       padding-bottom: 50px;
    }
-   .services{
+   .footer .about{
       margin-top: 50px;
+      margin-left: -15px;
    }
   .header .right-bar{
       display: none;
@@ -42,6 +43,8 @@
    .header {
       height: 8vh;
    }
+
+   
 }
 
 @media only screen and (max-width: 820px) {
@@ -52,9 +55,9 @@
    .header .logo{
       padding-bottom: 50px;
    }
-   .services{
-      margin-top: 50px;
-   }
+   /* .header .services{
+      margin-top: -50px;
+   } */
   .header .right-bar{
       display: none;
    }
@@ -63,6 +66,9 @@
    }
  .header  .fa-bars{
       display: block;
+   }
+   .footer{
+      height: 75vh;
    }
 }
 
@@ -83,6 +89,9 @@
    }
    .header{
       height: 12vh;
+   }
+   .footer{
+      height: 95vh;
    }
 }
 
@@ -121,6 +130,9 @@
    width: 100px;
    margin-left: 16px;
   }
+  .footer{
+   height: 95vh;
+}
 }
 
 @media only screen and (max-width: 390px) {
