@@ -2,7 +2,7 @@ const signUp = document.getElementById("sign-up");
 signUp.addEventListener("click", (e) => {
   e.preventDefault();
   captcha_checker();
-  confirmPassword();
+//   confirmPassword();
   firstNameValidation();
   lastNameValidation();
   emailValidation();
@@ -80,126 +80,153 @@ window.addEventListener("load", random);
 
 //Captcha Checker
 function captcha_checker() {
-  if (input.value != output.value) {
+if (input.value != output.value) {
     input.value = "";
     input.placeholder = "Invalid";
     input.style.border = "1px solid red";
     input.addEventListener("focus", (e) => {
-      input.style.border = "1px solid black";
-      input.value = "";
-      input.placeholder = "Enter Your Captcha";
+    input.style.border = "1px solid black";
+    input.value = "";
+    input.placeholder = "Enter Your Captcha";
     });
-  }
+    }
 }
 
 // ---------------------------------------------------------------------------------------
-let flag = false;
+var flag = false;
 const password = document.getElementById("password");
 const ul = document.getElementById("ul");
 password.addEventListener("input", () => {
-  let passwordValue = password.value;
-  let up = localStorage.getItem("upperCase");
-  if (up == "true") {
-    flag = true;
-    console.log("Inside Upper");
-    ul.innerHTML += `<li id=uppercase>Atleast one uppercase</li>`;
-    ul.style.display = "block";
-    const upper = document.getElementById("uppercase");
-    if (passwordValue.match(/[A-Z]/)) {
-      upper.style.color = "green";
-    } else {
-      upper.style.color = "red";
+const upper = document.getElementById("uppercase");
+let up = localStorage.getItem("upperCase");
+if(!(upper)){
+        if (up == "true") {
+            ul.innerHTML += `<li id=uppercase>Atleast one uppercase</li>`;
+            ul.style.display = "block";
+            upper.style.color = "red";
+        }
     }
-  }
+    if(upper){
+        let passwordValue = password.value;
+        if (passwordValue.match(/[A-Z]/)) {
+            upper.style.color = "green";
+            flag = true;
+    } 
+    else {
+    upper.style.color = "red";
+    }
+}
 });
 
+
 password.addEventListener("input", () => {
-  let passwordValue = password.value;
-  let low = localStorage.getItem("lowercase");
-  if (low == "true") {
-    flag = true;
-    console.log("Inside Lower");
-    ul.innerHTML += `<li id=lowercase>Atleast one Lowercase</li>`;
-    ul.style.display = "block";
     const lower = document.getElementById("lowercase");
+    let low = localStorage.getItem("lowercase");
+    if(!(lower)){
+        if (low == "true") {
+            ul.innerHTML += `<li id=lowercase>Atleast one Lowercase</li>`;
+            ul.style.display = "block";
+        }
+    }
+    if(lower){
+    let passwordValue = password.value;
     if (passwordValue.match(/[a-z]/)) {
-      lower.style.color = "green";
-    } else {
-      lower.style.color = "red";
+    lower.style.color = "green";
+    flag = true;
+    } 
+    else {
+    lower.style.color = "red";
     }
-  }
+}
 });
 
 password.addEventListener("input", () => {
-  let passwordValue = password.value;
-  let special = localStorage.getItem("special");
-  if (special == "true") {
-    flag = true;
-    console.log("Inside special");
-    ul.innerHTML += `<li id=special>Atleast one Special Character</li>`;
-    ul.style.display = "block";
     const specialChar = document.getElementById("special");
+    let special = localStorage.getItem("special");
+    if(!(specialChar)){
+        if (special == "true") {
+            ul.innerHTML += `<li id=special>Atleast one Special Character</li>`;
+            ul.style.display = "block";
+        }
+    }
+    if(specialChar){
+    let passwordValue = password.value;
     if (passwordValue.match(/[! @ # $ % ^ & * ( ) _ - ]/)) {
-      specialChar.style.color = "green";
-    } else {
-      specialChar.style.color = "red";
-    }
-  }
-});
-
-password.addEventListener("input", () => {
-  let passwordValue = password.value;
-  let number = localStorage.getItem("number");
-  if (number == "true") {
+    specialChar.style.color = "green";
     flag = true;
-    console.log("Inside number");
-    ul.innerHTML += `<li id=number>Atleast one number</li>`;
-    ul.style.display = "block";
-    const number = document.getElementById("number");
-    if (passwordValue.match(/[0-9]/)) {
-      number.style.color = "green";
     } else {
-      number.style.color = "red";
+    specialChar.style.color = "red";
     }
-  }
+}
 });
 
 password.addEventListener("input", () => {
-  let len = localStorage.getItem("passwordLength");
-  console.log(len);
-  let passwordValue = password.value;
-  ul.style.display = "block";
-  ul.innerHTML += `<li id=length>Atleast ${len} character`;
-  const length = document.getElementById("length");
+    const numberr = document.getElementById("number");
+    let number = localStorage.getItem("number");
+    if(!(numberr)){
+    if (number == "true") {
+        ul.innerHTML += `<li id=number>Atleast one number</li>`;
+        ul.style.display = "block";
+    }
+}
+if(numberr){
+    let passwordValue = password.value;
+  if (passwordValue.match(/[0-9]/)) {
+    numberr.style.color = "green";
+    flag = true;
+  } else {
+    numberr.style.color = "red";
+  }
+}
+});
+
+password.addEventListener("input", () => {
+    const length = document.getElementById("length");
+    let len = localStorage.getItem("passwordLength");
+    if(!(length)){
+        ul.style.display = "block";
+        ul.innerHTML += `<li id=length>Atleast ${len} character`;
+    }
+let passwordValue = password.value;
   if (passwordValue.split("").length < len) {
     length.style.color = "red";
-  } else {
+} else {
     length.style.color = "green";
+    flag = true;
   }
 });
-if (flag) {
-  ul.style.display = "none";
-}
+
+console.log(flag);
+// if(flag){
+//     ul.style.display="none";
+// }
+
 // ---------------------------------------------------------------------------------------
 
 // Validation  Between enter and confirm password
 
-function confirmPassword() {
-  const password = document.getElementById("password");
-  let passwordValue = password.value;
-  const confirmpassword = document.getElementById("confirm-password");
-  let confirmpasswordValue = confirmpassword.value;
-  let passDiv = document.getElementById("same-pass");
-  if (passwordValue != confirmpasswordValue) {
+const confirmpassword = document.getElementById("confirm-password");
+confirmpassword.addEventListener('input',()=>{
+    confirmPasword();
+})
+function confirmPasword() {
+const password = document.getElementById("password");
+let passwordValue = password.value;
+let passDiv = document.getElementById("same-pass");
+const confirmpassword = document.getElementById("confirm-password");
+let confirmpasswordValue = confirmpassword.value;
+if (passwordValue != confirmpasswordValue){
     passDiv.style.display = "block";
     passDiv.innerText = "Enter correct password";
     confirmpassword.style.border = "1px solid red";
-    confirmpassword.addEventListener("focus", () => {
-      passDiv.style.display = "none";
-      confirmpassword.style.border = "none";
-    });
-  }
 }
+if (passwordValue == confirmpasswordValue){
+    passDiv.style.display = "none";
+    passDiv.innerText = "Password dosen't match";
+    confirmpassword.style.border = "1px solid red";
+}
+}
+
 
 // ---------------------------------------------------------------------------------------
 

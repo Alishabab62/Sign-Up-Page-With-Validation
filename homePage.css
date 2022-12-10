@@ -130,7 +130,7 @@ select{
     width: 45%;
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
-    color: gray;
+    color: red;
     display: none;
 }
 ul li{
