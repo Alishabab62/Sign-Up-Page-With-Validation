@@ -9,12 +9,37 @@
    .terms-condition{
       margin-top: 50px;
    }
+   .header .logo{
+      padding-bottom: 50px;
+   }
+  
+   .header .right-bar{
+      width: 50%;
+   }
 }
 
 @media only screen and (max-width: 1000px) {
    .cont{
       width: 60%;
       height: 53%;
+   }
+   .header .logo{
+      padding-bottom: 50px;
+   }
+   .services{
+      margin-top: 50px;
+   }
+  .header .right-bar{
+      display: none;
+   }
+ .header  .search-bar{
+      margin-right: 30px;
+   }
+ .header  .fa-bars{
+      display: block;
+   }
+   .header {
+      height: 8vh;
    }
 }
 
@@ -23,12 +48,40 @@
       width: 60%;
       height: 53%;
    }
+   .header .logo{
+      padding-bottom: 50px;
+   }
+   .services{
+      margin-top: 50px;
+   }
+  .header .right-bar{
+      display: none;
+   }
+ .header  .search-bar{
+      margin-right: 30px;
+   }
+ .header  .fa-bars{
+      display: block;
+   }
 }
 
 
 @media only screen and (max-width: 650px) {
+   .header .logo{
+      padding-bottom: 50px;
+   }
    .services{
       margin-top: 50px;
+   }
+  .header .right-bar{
+      display: none;
+   }
+ .header  .search-bar{
+      margin-right: 30px;
+      margin-left:-27px ;
+   }
+   .header{
+      height: 12vh;
    }
 }
 
@@ -39,7 +92,7 @@
    }
    .cont{
       width: 100%;
-      height: 70%;
+      /* height: 70%; */
    }
    #input{
       width: 50%;
@@ -55,13 +108,17 @@
    }
    .cont{
       width: 100%;
-      height: 76%;
+      /* height: 76%; */
    }
    #input{
       width: 50%;
   }
   .captcha i{
       left: 85px;
+  }
+  .header .logo{
+   width: 100px;
+   margin-left: 16px;
   }
 }
 
@@ -70,8 +127,14 @@
       margin-top: 50px;
    }
    .cont{
-      height:88%;
       width: 100%;
+   }
+  .header .logo{
+      width: 100px;
+      margin-left:25px;
+   }
+   .footer .firstrow .terms-condition{
+      margin-left: 120px;
    }
 }
 
@@ -83,4 +146,9 @@
       height:79%;
       width: 100%;
    }
+}
+@media only screen and (max-width: 360px) {
+  .header{
+   width: 100vw;
+  }
 }

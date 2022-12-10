@@ -2,7 +2,6 @@ const signUp = document.getElementById("sign-up");
 signUp.addEventListener("click", (e) => {
   e.preventDefault();
   captcha_checker();
-//   confirmPassword();
   firstNameValidation();
   lastNameValidation();
   emailValidation();
@@ -93,13 +92,13 @@ if (input.value != output.value) {
 }
 
 // ---------------------------------------------------------------------------------------
-var flag = false;
+let flag = false;
 const password = document.getElementById("password");
 const ul = document.getElementById("ul");
 password.addEventListener("input", () => {
-const upper = document.getElementById("uppercase");
-let up = localStorage.getItem("upperCase");
-if(!(upper)){
+    const upper = document.getElementById("uppercase");
+    let up = localStorage.getItem("upperCase");
+    if(!(upper)){
         if (up == "true") {
             ul.innerHTML += `<li id=uppercase>Atleast one uppercase</li>`;
             ul.style.display = "block";
@@ -110,7 +109,7 @@ if(!(upper)){
         let passwordValue = password.value;
         if (passwordValue.match(/[A-Z]/)) {
             upper.style.color = "green";
-            flag = true;
+            flag=true;
     } 
     else {
     upper.style.color = "red";
@@ -132,7 +131,6 @@ password.addEventListener("input", () => {
     let passwordValue = password.value;
     if (passwordValue.match(/[a-z]/)) {
     lower.style.color = "green";
-    flag = true;
     } 
     else {
     lower.style.color = "red";
@@ -153,7 +151,6 @@ password.addEventListener("input", () => {
     let passwordValue = password.value;
     if (passwordValue.match(/[! @ # $ % ^ & * ( ) _ - ]/)) {
     specialChar.style.color = "green";
-    flag = true;
     } else {
     specialChar.style.color = "red";
     }
@@ -173,7 +170,6 @@ if(numberr){
     let passwordValue = password.value;
   if (passwordValue.match(/[0-9]/)) {
     numberr.style.color = "green";
-    flag = true;
   } else {
     numberr.style.color = "red";
   }
@@ -192,14 +188,8 @@ let passwordValue = password.value;
     length.style.color = "red";
 } else {
     length.style.color = "green";
-    flag = true;
   }
 });
-
-console.log(flag);
-// if(flag){
-//     ul.style.display="none";
-// }
 
 // ---------------------------------------------------------------------------------------
 
@@ -223,7 +213,7 @@ if (passwordValue != confirmpasswordValue){
 if (passwordValue == confirmpasswordValue){
     passDiv.style.display = "none";
     passDiv.innerText = "Password dosen't match";
-    confirmpassword.style.border = "1px solid red";
+    confirmpassword.style.border = "1px solid transparent";
 }
 }
 
