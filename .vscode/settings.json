@@ -1,3 +1,6 @@
 {
-  "livePreview.defaultPreviewPath": "c:\\Users\\alish\\OneDrive\\Desktop\\Login\\homePage.html"
+  "livePreview.defaultPreviewPath": "c:\\Users\\alish\\OneDrive\\Desktop\\Login\\homePage.html",
+  "cSpell.enableFiletypes": ["!css"],
+  "cSpell.language": "en,en-US",
+  "cSpell.words": ["Dehradun", "Suddhowala"]
 }
